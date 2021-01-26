@@ -124,7 +124,7 @@ async function getStreamAndRecord() {
                 fetch('https://upload.giphy.com/v1/gifs?api_key=KBzPxkz8JbGW5o84HBSui0A3IJFindfN', {
                     method: "POST",
                     body: formm,
-                    //mode: "no-cors"
+                    mode: "no-cors"
                 })
                 .then((response) => response.json())  // convert to json
                 .then((myGif) => {
