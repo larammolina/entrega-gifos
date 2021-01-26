@@ -440,6 +440,8 @@ function modoNoche() {
     document.getElementById('resulTrendingTag').classList.toggle('darkTitle');
     document.getElementById('busquedaBorde').classList.toggle('darkBorder');
     document.getElementById('drop-menu').classList.toggle('blackBackground');
+    document.getElementById('max').classList.toggle('blackBackground');
+    
 
     btnSwitch.textContent = 'Modo Diurno';
 }

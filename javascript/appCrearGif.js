@@ -283,6 +283,7 @@ function modoNoche() {
     document.getElementById('lineTop').classList.toggle('darkBackground');
     document.getElementById('lineBotton').classList.toggle('darkBackground');
     document.getElementById('drop-menu').classList.toggle('blackBackground');
+    document.getElementById('max').classList.toggle('blackBackground');
 
     btnSwitch.textContent = 'Modo Diurno';
 }
