@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <title>GifOS Maca Molina</title>
+</head>
+<body>
+    <header>
+        <div class="line" id="lineTop"></div>
+        <nav class="" id="nav">
+            <div class="line1"></div>
+            <div class=nav_wrapper>
+                <a href="index.html"><img class="logo" src="images/logo-mobile.svg" alt="logo"/></a>
+                <img class="burger" src="images/burger.svg" alt="burger" />
+                <img class="cruz" src="images/Button-close-hover-modo-noc.svg" alt="close" />
+            </div>
+            <input class="input" type="checkbox" id="toggle"/>
+            <ul class="drop-menu" id="drop-menu">
+                <li><a id="switch" href="#">Modo Nocturno</a></li>
+                <li><a id="link1" href="/favoritos.html">Favoritos</a></li>
+                <li><a id="link2" href="/misGifos.html">Mis Gifos</a></li>
+                <li><a id="crear" href="crearGif.html"><img class="crearGIFO" src="images/button-crear-gifo.svg" alt="crearGIFO"/></a></li>
+            </ul>    
+        </nav> 
+    </header>
+    <main>
+        <div id='max' class='apagado'>
+            
+            <img class="cruzGif" src="images/Button-close-hover-modo-noc.svg" alt="close" id="cerrar"/>
+            
+            <img id='max_gif' src="" alt=""/>
+            <div class="info">
+                <div>
+                    <h3>User</h3>
+                    
+                </div>
+                <div class='contenedorImagenes'>
+                    <img class='hoverImagenes'  src='images/icon-fav-hover.svg' alt='favoritos' onclick='addFavorito(this)'/> 
+                    <img class='hoverImagenes'  src='images/icon-link-normal.svg' alt='' onclick='download(this)'/>
+                </div>
+            </div>
+        </div>
+        <div id="cuerpo" class="">
+            <div class="gridCrearGifo">
+                <section class="imagenVideo">
+                    <img class="camara" src="images/camara.svg" alt="camara" />
+                    <img class = "luz" src="images/Path 2.svg" alt="luz"/>
+                </section>
+                <section class="cuadroDeGif">
+                    <div class="cuadro">
+                        <h1 class="title" id="contenido">Aca podras crear tus propios <span class="gifos">GIFOS</span></h2>
+                        <p id="contenido2">¡Crea tu GIFO en sólo 3 pasos!</p>
+                        <p id='contenido3'>(sólo necesitas una cámara para grabar un video)</p>
+                        <video id='vid1' class="vid1"></video>
+                        <img id="showGif" class="off" src="" alt="NewGIFO"> 
+                        <div class='resultado' id='contenedorImagenesID'></div>
+                    </div>
+                    <div class="etapas">
+                        <p class="numeroEtapa" id="1">1</p>
+                        <p class="numeroEtapa" id="2">2</p>
+                        <p class="numeroEtapa" id="3">3</p>
+                    </div>
+                    <div class="lineCrear"></div>
+                    <div class="botones">
+                        <button id="comenzar">Comenzar</button>
+                        <button id="grabar">Grabar</button>
+                        <button id="finalizar">Finalizar</button>
+                        <button id="subirGifo">Subir GIFO</button>
+                    </div>     
+                </section> 
+                <section class="rolloPelicula">
+                    <img class="rollo" src="images/pelicula.svg" alt="rollo" />
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contenedorFooter">
+            <h3>Compartir en:</h3>
+            <div class="emoticones">
+                <a href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a> 
+                <a href="www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <h5>© GIFOS 2020 All Rights Reserved.</h5>
+    </footer>
+    <div class="line" id="lineBotton"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+    <script src="javascript/appCrearGif.js" async></script>
+    <script src="javascript/buttons.js" async></script>
+</body>
+</html>
