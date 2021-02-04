@@ -4,6 +4,8 @@ const apiKey = 'KBzPxkz8JbGW5o84HBSui0A3IJFindfN';
 let contador_verMas = 0;
 let campo_verMas;
 
+document.getElementById('cruzBuscar').style.display = 'none';
+
 function addFavorito(tarjeta) {
     let imgID = 't'+tarjeta.id
     let imSRC = document.getElementById(imgID).src
@@ -158,7 +160,8 @@ function search(gif, contador){
         console.log('url de consulta: ' + url2);
         fetch(url2).then (response => response.json())
             .then(content => {
-
+                document.getElementById('lupa').style.display = 'block';
+                document.getElementById('cruzBuscar').style.display = 'none';
                 //console.log('content.meta '+JSON.stringify(content.data[0]));
                 let titulo = document.getElementById('resultadoTitulo');
                 titulo.innerText = gif_input;
@@ -247,6 +250,8 @@ function resetLayout(){
 
 document.getElementById("busqueda").addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
+        document.getElementById('cruzBuscar').style.display = 'none';
+        document.getElementById('lupa').style.display = 'block';
         resetLayout()
         search(this,0);
     }
@@ -276,7 +281,8 @@ function  searchAuto(term) {
     console.log('url de consulta: ' + url);
     fetch(url).then (response => response.json())
         .then(content => {
-
+            document.getElementById('cruzBuscar').style.display = 'block';
+            document.getElementById('lupa').style.display = 'none';
                 let resultado = document.getElementById('autocompletar');
                 let resultado2 = document.getElementById('autocompletar2');
                 let resultado3 = document.getElementById('autocompletar3');
@@ -334,12 +340,26 @@ document.getElementById("busqueda").addEventListener('keyup', function (e) {
     
 });
 
-//sugerencias de busquedas 
-
 let sugerencia1 = document.getElementById("autocompletar");
 let sugerencia2 = document.getElementById("autocompletar2");
 let sugerencia3 = document.getElementById("autocompletar3");
 let sugerencia4 = document.getElementById("autocompletar4");
+
+
+//onclick borrar
+let cruzBorrar = document.getElementById("cruzBuscar");
+cruzBorrar.addEventListener('click', () => {
+    busqueda.value = "";
+    document.getElementById('cruzBuscar').style.display = 'none';
+    document.getElementById('lupa').style.display = 'block';
+    sugerencia1.innerHTML = '';
+    sugerencia2.innerHTML = '';
+    sugerencia3.innerHTML = '';
+    sugerencia4.innerHTML = '';
+})
+
+
+//sugerencias de busquedas 
 
 let busqueda = document.getElementById("busqueda");
 
